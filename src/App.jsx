@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { CreateUser } from "./features/CreateUser"
+import {SApp,STable} from "./App.styled"
+import { TableHeader } from "./features/TableHeader"
+import { TableRow } from "./features/TableRow"
 
+import {useContext} from "react"
+import { GlobalContext } from "./GlobalContext.jsx/GlobalContext"
 function App() {
-  const [count, setCount] = useState(0)
+
+  const {users} =useContext(GlobalContext)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <SApp>
+     <CreateUser/>
+     <STable>
+
+    <TableHeader/>
+    <tr>
+      <td>სახელი გვარი</td>
+      <td>-</td>
+      <td>-</td>
+      <td>100</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>ანი</td>
+      <td>30</td>
+      <td>50</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+   {users.map((user)=> {
+    return <TableRow key={user.id} user={user} />
+   }
+
+   )}
+ <TableRow/>
+  /* <tr>
+    <th>Students</th>
+    <th>Contact</th>
+
+
+import React from 'react'
+
+export function TableRow() {
+export function TableRow({user}) {
+  return (
+    <div>
+
+    </div>
+    <tr>
+      <td>{user.username}</td>
+      <td>-</td>
+      <td>-</td>
+      <td>100</td>
+      <td>30</td>
+    </tr>
   )
 }
 
 export default App
+
+
