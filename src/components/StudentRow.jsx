@@ -6,7 +6,7 @@ const StudentRow = ({ student, selectedSubject, selectedWeek, updateStudentInfo,
       <input
         type="text"
         value={student.name}
-       onClick ={(e) => updateStudentInfo( e.target.value)}
+        onChange={(e) => updateStudentInfo(student.id, 'name', e.target.value)}
       />
     </td>
     <td>
