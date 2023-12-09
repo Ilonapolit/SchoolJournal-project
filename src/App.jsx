@@ -1,3 +1,8 @@
+import React, { useState } from 'react';
+import SubjectButton from './components/SubjectButton';
+import WeekButton from './components/WeekButton';
+import StudentRow from './components/StudentRow';
+
 const App = () => {
   const subjects = ['math', 'english', 'georgian'];
   const weeks = ['Week1', 'Week2', 'Week3'];
