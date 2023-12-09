@@ -6,7 +6,7 @@ import StudentRow from './components/StudentRow';
 const App = () => {
   const subjects = ['math', 'english', 'georgian'];
   const weeks = ['Week1', 'Week2', 'Week3'];
-  const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [selectedWeek, setSelectedWeek] = useState(weeks[0]);
